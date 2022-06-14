@@ -27,28 +27,29 @@ ORDER BY comment_group.id ";
 
 $query_run = mysqli_query($conn, $query);
     $result =[];
-    
-    foreach ($query_run as $row) {
-        $keys = $row['id'];
-        $hahaha = $row['id_comments'];
-        $item = [];
-       if(isset($result['id'])){
-        
-        if(array_key_exists($hahaha, $result)){
-          $result[$hahaha]['commentsss'][] = [
-                                              $row['id_comments'],
-                                              $row['content_cm']
-                                              ];
-        }} 
+    foreach ($query_run as $row){
+      $item = [];
+       
+      $key = $row['id'];
+      if(array_key_exists($key, $result)){
+      if($row['id_comments'] && $row['id_tags'] ){
+        $result[$key]['contents'][]  =  [$row['id_comments'], $row['content_cm']];
+        $result[$key]['tagss'][]  =  [$row['id_tags'], $row['content']];
+      } 
+      }
       else{
-          $item = [
-              "id" => $row['id'],
-              "ngaytao" => $row['ngaytao'],
-              "commentsss" => [ "id" => $row['id_comments'], $row['content_cm']]
-          ];
-          $result[$keys] = $item;
-        }
+        $item['id'] = $row['id'];
+        $item['ngaytao'] = $row['ngaytao'];
+        $item['contents'] = [$row['id_comments'], $row['content_cm']];
+        $item['tagss']  =  [$row['id_tags'], $row['content']];
+        $result[$key] = $item;
       
+    }
+  }
+    echo "<pre>";
+    print_r($result);
+    echo "</pre>";
+
 
 
     ?>
@@ -60,12 +61,7 @@ $query_run = mysqli_query($conn, $query);
                                 <td>  </td>
                             </tr>
   </tbody>
-  <?php }
-      
-      echo "<pre>";
-      print_r($result);
-      echo "</pre>";
-  ?>
+  
  
 </table>
 </body>

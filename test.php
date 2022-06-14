@@ -1,87 +1,4 @@
-<?php include 'dbconfig.php';
-
-
-
-// $data = array(
-//     array(
-//         "id" => 1,
-//         "name" => "Bruce Wayne",
-//         "city" => "Gotham",
-//         "gender" => "Male"
-//     ),
-//     array(
-//         "id" => 1,
-//         "name" => "Thomas Wayne",
-//         "city" => "Gotham",
-//         "gender" => "Male"
-//     ),
-//     array(
-//         "id" => 3,
-//         "name" => "Diana Prince",
-//         "city" => "New Mexico",
-//         "gender" => "Female"
-//     ),
-//     array(
-//         "id" => 4,
-//         "name" => "Speedy Gonzales",
-//         "city" => "New Mexico",
-//         "gender" => "Male"
-//     )
-// );
-
-// // foreach($data as $val) {
-// //     if(array_key_exists('id', $val)){
-// //         $result[$val['id']][] = $val;
-// //     }else{
-// //         $result[""][] = $val;
-// //     }
-// // }
-// // echo "<pre>";
-// // print_r($result);
-// // echo "</pre>";die;
-
-
-//     $result = array();
-//     foreach($data as $val) {
-//         if(array_key_exists('id', $val)){
-//             $result[$val['id'].$val['gender']][] = $val;
-//         }else{
-//             $result[""][] = $val;
-//         }
-//     }
-//     echo "<pre>";
-//     print_r($result);
-//     echo "</pre>";
-    
-   
-    
-
-
-// echo date('d/m/Y');
-// $input = array("a" => "green", "red", "b" => "green", "blue", "red");
-// $result = array_unique($input);
-// print_r($result);
-// if($query_run)
-//                 {
-//                     // $arr = [];
-//                     // foreach($query_run as $row)
-//                     // {
-//                     //     // $arr[$row['id']][] = $row;
-//                     // }  
-//                     //     echo "<pre>";
-//                     //     print_r($arr);
-//                     //     echo "</pre>";
-//                     $arr = [];
-//                     while($row = mysqli_fetch_array($query_run))
-//                       {
-//                         $arr[$row['id']][]= $row;
-//                       }
-//                       echo "<pre>";
-//                       print_r(array_unique($arr));
-//                       echo "</pre>";
-                      
-// }
-?>
+<?php include 'dbconfig.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,20 +49,7 @@ $query_run = mysqli_query($conn, $query);
           $result[$keys] = $item;
         }
       
-      // $haha = date("d/m/Y" ,strtotime($row['ngaytao'] ));
-      // $key = $row['id']."_".$haha;
-      // if(array_key_exists($key, $result)){
-      //   $result[$key]['contents']  .= ' , ' .$row['content_cm']; 
-      //   $result[$key]['tagss']  .= ' , ' .$row['content']; 
 
-      // } 
-      // else{
-      //   $item['id'] = $row['id'];
-      //   $item['ngaytao'] = $row['ngaytao'];
-      //   $item['contents'] = $row['content_cm'];
-      //   $item['tagss'] = $row['content'];
-      //   $result[$key] = $item;
-      // }
 
     ?>
   <tbody>
